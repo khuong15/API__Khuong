@@ -1,0 +1,277 @@
+logging:
+  level:
+    org.springframework.security: INFO
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 10000000
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9010/eureka/
+
+spring:
+  main:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://test-beedu-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/testbeedudb?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+#      username: devbeedu
+#      password: devbeedu@2019
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-main-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      connectionInitSqls: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;"
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  authentication:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://test-beedu-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/beedu-authentication-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+#      username: devbeedu
+#      password: devbeedu@2019
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-authentication-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  activity:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://test-beedu-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/beedu-activity-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+#      username: devbeedu
+#      password: devbeedu@2019
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-activity-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      connectionInitSqls: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;"
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  qa:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://test-beedu-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/beedu-qa-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+#      username: devbeedu
+#      password: devbeedu@2019
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-qa-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  chat:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://test-beedu-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/beedu-chat-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+#      username: devbeedu
+#      password: devbeedu@2019
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-chat-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  wiki:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://test-beedu-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/beedu-wiki-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+#      username: devbeedu
+#      password: devbeedu@2019
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-wiki-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  log:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+#      url: jdbc:mysql://test-beedu-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/beedu-log-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+#      username: devbeedu
+#      password: devbeedu@2019
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-log-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  calendar:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-calendar-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  elearning:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-elearning?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  task:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-task-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  chat-matrix:
+    datasource:
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://54.179.94.223:5432/synapse
+      username: synapse
+      password: Tt24081203
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  bechat:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bechat-main-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+  activemq:
+    broker-url=tcp: mq-test.beedu.vn
+    user: admin
+    password: testmq@2019
+    trust-all: true
+  integration:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://test-lienviet-rds-mysql-instance.c0vduc4s8odp.ap-southeast-1.rds.amazonaws.com:3306/bework-integration-test?characterEncoding=utf8&autoReconnect=true&verifyServerCertificate=false&useSSL=false&connectionCollation=utf8mb4_unicode_ci
+      username: testbeworkrds
+      password: bework2020
+      connectionInitSqls: "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;"
+      testWhileIdle: true
+      validationQuery: SELECT 1
+      max-active: 1
+      tomcat:
+        max-wait: 20000
+        max-active: 1
+        initial-size: 1
+        max-idle: 1
+        min-idle: 1
+        test-on-borrow: true
+        validation-query: SELECT 1
+

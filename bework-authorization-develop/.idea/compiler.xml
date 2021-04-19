@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bework-authorization" target="1.8" />
+      <module name="bework-calendar-service" target="1.8" />
+      <module name="bework-chat-service" target="1.8" />
+      <module name="bework-configuaration" target="1.5" />
+      <module name="bework-discovery" target="1.5" />
+      <module name="bework-gateway" target="1.5" />
+      <module name="bework-main-service" target="1.5" />
+      <module name="bework-task-service" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,127 @@
+spring:
+  http:
+    multipart:
+      max-file-size: 2000MB
+      max-request-size: 2000MB
+    #      location: C:/Users/VuTrinh/AppData/Local/Temp
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  aop:
+    proxyTargetClass: true
+  application:
+    name: bework-gateway
+  cloud:
+    config:
+      uri: http://localhost:10000
+      username: user
+      password: ezsolution
+      fail-fast: true
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          strategy: THREAD
+#          thread:
+#            timeoutInMilliseconds: 10000000
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+#ribbon:
+#  ReadTimeout: 10000000
+#  ConnectTimeout: 10000000
+server:
+  port: 9100
+  tomcat:
+    uri-endcode: UTF-8
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 9010
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+
+zuul:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  routes:
+#    resource-server-mvc-1:
+#      path: /resource-server-mvc-1/**
+#      url: http://localhost:8870/
+#      sensitiveHeaders:
+    bework-main-service:
+      path: /api/**
+      url: http://localhost:9200/api
+      sensitiveHeaders:
+    bework-qa-service:
+      path: /qa/api/**
+      url: http://localhost:9300/api
+      sensitiveHeaders:
+    bework-chat-service:
+      path: /chat/api/**
+      url: http://localhost:9400/api
+      sensitiveHeaders:
+    bework-wiki-service:
+      path: /wiki/api/**
+      url: http://localhost:9500/api
+      sensitiveHeaders:
+    bework-log:
+      path: /log/api/**
+      url: http://localhost:9600/api
+      sensitiveHeaders:
+    bework-livestream-service:
+      path: /livestream/api/**
+      url: http://localhost:9700/api
+      sensitiveHeaders:
+    bework-calendar-service:
+      path: /calendar/api/**
+      url: http://localhost:9800/api
+      sensitiveHeaders:
+    bework-elearning-service:
+      path: /elearning/api/**
+      url: http://localhost:9900/api
+      sensitiveHeaders:
+    bework-task-service:
+      path: /task/api/**
+      url: http://localhost:9090/api
+      sensitiveHeaders:
+    auth:
+      path: /bework-authorization/**
+      url: http://localhost:9001/bework-authorization/
+      sensitive-headers:
+    bechat-backend-chat-service:
+      path: /chat-backend/api/**
+      url: http://localhost:9002/api
+      sensitiveHeaders:
+  add-proxy-headers: true
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    sso:
+      loginPath: /login
+    client:
+      accessTokenUri: http://localhost:8769/bework-authorization/oauth/token
+      userAuthorizationUri: http://localhost:8769/bework-authorization/oauth/authorize
+      clientId: fooClient
+      clientSecret: fooSecret
+    resource:
+      jwt:
+        keyValue: "beedu@2019"
+      id: fooScope
+      serviceId: ${PREFIX:}resource
+
+logging:
+  level.org.springframework.security: DEBUG
+

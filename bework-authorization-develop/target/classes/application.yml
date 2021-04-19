@@ -1,0 +1,47 @@
+spring:
+  aop:
+    proxyTargetClass: true
+  application:
+    name: bework-authorization
+  cloud:
+    config:
+      uri: http://localhost:10000
+      username: user
+      password: ezsolution
+      fail-fast: true
+
+server:
+  port: 8080
+  context-path: /bework-authorization
+  use-forward-headers: false
+
+eureka:
+  instance:
+      hostname: localhost
+      port: 9010
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      
+facebook:
+  client:
+    clientId: 233668646673605
+    clientSecret: 33b17e044ee6a4fa383f46ec6e28ea1d
+    accessTokenUri: https://graph.facebook.com/oauth/access_token
+    userAuthorizationUri: https://www.facebook.com/dialog/oauth
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://graph.facebook.com/me
+    
+github:
+  client:
+    clientId: Iv1.8af64eb8c619fa01
+    clientSecret: 4555b69d13bf20553cf09d6145c4b0c8885010ee
+    accessTokenUri: https://github.com/login/oauth/access_token
+    userAuthorizationUri: https://github.com/login/oauth/authorize
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://api.github.com/user
+      

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: bework-gateway
+  cloud:
+    config:
+      uri: http://localhost:10000
+      username: user
+      password: ezsolution
+      fail-fast: true

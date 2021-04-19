@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bework-configuaration-develop.iml" filepath="$PROJECT_DIR$/.idea/bework-configuaration-develop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bework-discovery-develop/bework-discovery.iml" filepath="$PROJECT_DIR$/../bework-discovery-develop/bework-discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bework-gateway-develop/bework-gateway.iml" filepath="$PROJECT_DIR$/../bework-gateway-develop/bework-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bework-task-service/bework-task-service.iml" filepath="$PROJECT_DIR$/../bework-task-service/bework-task-service.iml" />
+    </modules>
+  </component>
+</project>
